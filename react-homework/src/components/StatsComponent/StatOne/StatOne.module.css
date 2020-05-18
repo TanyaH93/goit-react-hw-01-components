@@ -1,0 +1,26 @@
+.statsList {
+  border: 1px solid grey;
+  width: 268px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-basis: 25%;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  margin: 0 auto;
+  width: 100%;
+  background-color: brown;
+}
+.item:not(:last-child) {
+  border-right: 1px solid grey;
+}
+.label,
+.percentage {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: auto;
+  color: #fff;
+}

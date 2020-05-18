@@ -1,0 +1,14 @@
+.statsSection {
+  padding: 20px 0;
+  background-color: #e7ecf2;
+}
+.title {
+  border: 1px solid grey;
+  background-color: #fff;
+  width: 268px;
+  margin: 0 auto;
+  padding: 30px 0;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #475965;
+}
