@@ -1,21 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import transactions from '../../../transactions.json';
 import TransactionOne from '../TransactionOne/TransactionOne';
 import css from './TransactionHistory.module.css';
 
-const TransactionHistory = ({ transactions }) => {
-  return (
-    <section className={css.transactionsSection}>
-      <TransactionOne transactions={transactions} />
-    </section>
-  );
-};
+const TransactionHistory = () => (
+  <table className={css.transactionHistory}>
+    <thead className={css.tHead}>
+      <tr className={css.tRow}>
+        <th>Type</th>
+        <th>Amount</th>
+        <th>Currency</th>
+      </tr>
+    </thead>
 
-TransactionHistory.defaultProps = {
-  transactions: [],
-};
-TransactionHistory.propTypes = {
-  transactions: PropTypes.arrayOf(PropTypes.shape()),
-};
+    <tbody>
+      <TransactionOne from items={transactions} />
+    </tbody>
+  </table>
+);
 
 export default TransactionHistory;

@@ -2,35 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import css from './FriendOne.module.css';
 
-const FriendOne = ({ friends }) => {
+const FriendOne = ({ name, avatar, isOnline }) => {
+  const statusClasses = isOnline ? css.online : css.offline;
   return (
-    <ul className={css.friendList}>
-      {friends.map(friend => (
-        <li key={friend.id} className={css.friendItem}>
-          <span className={friend.isOnline ? css.green : css.red} />
-
-          <img
-            className={css.avatar}
-            src={friend.avatar}
-            alt={friend.name}
-            width="48"
-          />
-          <p className={css.name}>{friend.name}</p>
-        </li>
-      ))}
-    </ul>
+    <li className={css.item}>
+      <span className={statusClasses}>{isOnline}</span>
+      <img className={css.avatar} src={avatar} alt={name} width="58" />
+      <p className={css.name}>{name}</p>
+    </li>
   );
 };
-
 FriendOne.propTypes = {
-  friends: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      avatar: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      isOnline: PropTypes.bool.isRequired,
-    }),
-  ).isRequired,
+  name: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired,
 };
 
 export default FriendOne;

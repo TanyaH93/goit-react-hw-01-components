@@ -2,32 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import css from './TransactionOne.module.css';
 
-const TransactionOne = ({ transactions }) => {
-  return (
-    <table className={css.transactionHistory}>
-      <thead className={css.headTable}>
-        <tr className={css.headRow}>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
-        </tr>
-      </thead>
-
-      <tbody className={css.bodyTable}>
-        {transactions.map(transaction => (
-          <tr className={css.bodyRow} key={transaction.id}>
-            <td>{transaction.type}</td>
-            <td>{transaction.amount}</td>
-            <td>{transaction.currency}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
-};
+const TransactionOne = ({ items = [] }) =>
+  items.map(item => (
+    <tr key={item.id}>
+      <td className={css.tData}>{item.type}</td>
+      <td className={css.tData}>{item.amount}</td>
+      <td className={css.tData}>{item.currency}</td>
+    </tr>
+  ));
 
 TransactionOne.propTypes = {
-  transactions: PropTypes.arrayOf(
+  items: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       type: PropTypes.string.isRequired,

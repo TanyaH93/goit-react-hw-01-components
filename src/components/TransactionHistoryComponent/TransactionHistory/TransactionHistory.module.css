@@ -1,4 +1,19 @@
-.transactionsSection {
-  padding: 20px 0;
-  background-color: #e7ecf2;
+.transactionHistory {
+  margin: 0 auto;
+  width: 750px;
+  text-align: center;
+  border: 1px solid rgb(212, 223, 233);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+}
+.tHead {
+  text-transform: uppercase;
+  background-color: #00bcd5;
+}
+.tRow {
+  height: 50px;
+  width: 200px;
+  padding: 10px;
+  color: white;
+  font-size: 12px;
 }
